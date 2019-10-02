@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img id="pokemon"></img>
+    <script>
+        const $pokemon = document.querySelector('#pokemon')
+        function renderPokemon(image){
+            $pokemon.setAttribute('src', image)
+        }
+
+        // El segundo parámetro de Fetch es Opcional y dependerá del tipo de petición, envío de headers
+        // fetch('url', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'aplication/json'
+        //     },
+        //     body: JSON.stringify({
+        //         name: 'jean',
+        //         age: 22
+        //     })
+        // })
+
+        fetch('pokemon.json')
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                console.log(data)
+            })
+
+        fetch('logo.png')
+            .then(response => response.blob())
+            .then(bynaryLargeObject => {
+                const domString = URL.createObjectURL(bynaryLargeObject)
+                renderPokemon(domString)
+            })
+    </script>
+</body>
+</html>
