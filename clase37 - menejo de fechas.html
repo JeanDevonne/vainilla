@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Manejo de Fechas</title>
+  </head>
+  <body>
+    <script>
+      function diasEntreFechas(fecha1, fecha2) {
+        const unDia = 1000 * 60 * 60 * 24; //Milisegundos en un día
+        const diferencia = Math.abs(fecha1 - fecha2);
+        return Math.floor(diferencia / unDia);
+      }
+
+      const hoy = new Date();
+      const nacimiento = new Date(1992, 7, 1);
+      let dias = diasEntreFechas(hoy, nacimiento);
+      console.log(dias);
+    </script>
+  </body>
+</html>
