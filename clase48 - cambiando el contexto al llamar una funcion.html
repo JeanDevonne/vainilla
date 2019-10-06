@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        El contexto (o alcance) de una función es por lo general, window.
+        Así que en ciertos casos, cuando intentamos referirnos a .this en alguna parte del código,
+        es posible que tengamos un comportamiento inesperado, porque el contexto quizás no sea el
+        que esperamos.
+
+        Existen al menos tres formas (métodos) de cambiar el contexto de una función.
+
+        .bind
+        .call
+        .apply
+      */
+      const jean = {
+        nombre: "jean",
+        apellido: "leon"
+      };
+      const ada = {
+        nombre: "ada",
+        apellido: "lovelace"
+      };
+
+      function saludar() {
+        console.log(`Hola, mi nombre es ${this.nombre}`);
+      }
+
+      saludar(jean); // Hola, mi nombre es undefined
+      saludar(ada); // Hola, mi nombre es undefined
+
+      /*=====================================================*\
+        .bind : Crea una nueva función enlazada con 'this' 
+                asociado al objeto original (contexto).
+                .bind no ejecuta la función, solo retorna
+                la nueva función.
+
+                .bind(jean, param1, param2)
+                        |     |
+                        |     |
+                        |     Parámetros que recibirá
+                        |
+                        Quien será this
+      \*=====================================================*/
+      const saludarJean = saludar.bind(jean);
+      saludarJean(jean);
+
+      /*=====================================================*\
+        .call : Ejecuta inmediatamente la función.
+                .call(jean, 'param1', 'param2' ...)
+      \*=====================================================*/
+      saludar.call(ada);
+
+      /*=====================================================*\
+        .apply  : Ejecuta inmediatamente la función.
+                  .call(jean, ['param1', 'param2' ...])
+      \*=====================================================*/
+      saludar.apply(jean);
+    </script>
+  </body>
+</html>
