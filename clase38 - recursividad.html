@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Recursividad</title>
+  </head>
+  <body>
+    <script>
+      /*
+      Suponiendo una división de 13 entre 4
+
+      13 |_4__
+
+        13 - 4 = 9  ---------> |
+        9 - 4 = 5   ---------> |
+        5 - 1 = 1   ---------> |
+        1 - 4 = -3  ---------> X
+
+        Crearemos una función recursiva divisionEntera
+      */
+
+      function divisionEntera(dividendo, divisor) {
+        if (dividendo < divisor) {
+          return 0;
+        } else {
+          return 1 + divisionEntera(dividendo - divisor, divisor);
+        }
+      }
+    </script>
+  </body>
+</html>
