@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Memoización</title>
+  </head>
+  <body>
+    <script>
+      /*
+              !6 = 6 * 5 * 4 * 3 * 2 * 1 = 720
+              !10 = 10 * 9 * 8 * 7 * 6 * !6
+
+              La memoización es una técnica de programación que nos permite ahorrar cómputo o procesamiento en JavaScript.
+              Al ir almacenando el resultado invariable de una función para que no sea necesario volver a ejecutar todas
+              las instrucciones de nuevo, cuando se vuelva a llamar con los mismos parámetros.
+              Es similar a usar memoria cache.
+            */
+
+      function factorial(n) {
+        // preguntamos si existe una caché en esta función
+        if (!this.cache) {
+          // Si la caché no está definida creamos un objeto nuevo vacío.
+          this.cache = {};
+        }
+
+        //Pregunta si existe en cachpe el factorial de n
+        if (this.cache[n]) {
+          return this.cache[n];
+        }
+
+        if (n === 1 || n === 0) {
+          return 1;
+        }
+
+        // guardamos nuestro calculo en la caché
+        this.cache[n] = n * factorial(n - 1);
+        return this.cache[n];
+      }
+    </script>
+  </body>
+</html>
