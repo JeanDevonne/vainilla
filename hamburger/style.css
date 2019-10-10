@@ -1,5 +1,6 @@
 html {
-  --principal: #ccc;
+  --principal: #28f428;
+  --secondary: #00c2ff;
 }
 * {
   margin: 0;
@@ -20,7 +21,7 @@ html {
   position: absolute;
   height: 9px;
   width: 100%;
-  background: var(--principal);
+  background: linear-gradient(to left, var(--principal), var(--secondary));
   border-radius: 9px;
   transform: rotate(0deg);
   transition: 0.25s ease-in-out;
@@ -39,4 +40,27 @@ html {
 #hamburger.open span:nth-child(1) {
   top: 18px;
   transform: rotate(135deg);
+  background: linear-gradient(
+    to left,
+    var(--principal),
+    var(--secondary),
+    var(--principal)
+  );
+}
+#hamburger.open span:nth-child(2) {
+  transition: 0.4s;
+  opacity: 0;
+}
+#hamburger.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  background: linear-gradient(
+    to left,
+    var(--principal),
+    var(--secondary),
+    var(--principal)
+  );
 }
