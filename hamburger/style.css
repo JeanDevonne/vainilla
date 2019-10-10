@@ -1,0 +1,42 @@
+html {
+  --principal: #ccc;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Hamburger */
+#hamburger {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  margin: 50px auto;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+#hamburger span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: var(--principal);
+  border-radius: 9px;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+#hamburger span:nth-child(1) {
+  top: 0px;
+}
+#hamburger span:nth-child(2) {
+  top: 18px;
+}
+#hamburger span:nth-child(3) {
+  top: 36px;
+}
+
+#hamburger.open span:nth-child(1) {
+  top: 18px;
+  transform: rotate(135deg);
+}
