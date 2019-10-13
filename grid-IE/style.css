@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid blue;
+}
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 30%; /* IE11 */
+  margin: 1.6%; /* IE11 */
+  background: rgb(242, 248, 207);
+  border: 4px dashed black;
+}
+/* This will only activate the Grid in browsers that support it */
+@supports (display: grid) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-content: space-between;
+  }
+  .grid-item {
+    width: 100%;
+    background: rgb(243, 242, 242);
+    margin: 0; /* We will use grid-gap instead of margin */
+  }
+}
