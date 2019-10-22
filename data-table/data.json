@@ -1,0 +1,31 @@
+{
+  "client_id": 11,
+  "from_date": "2019-03-01",
+  "to_date": "2019-03-08",
+  "data": [
+    {
+      "id": "1",
+      "company_name": "ABC",
+      "num_of_people": 3,
+      "num_of_page_visits": 4,
+      "time_on_site_in_secs": 62,
+      "last_visited_datetime": "2018-12-06 13:00:00+00:00"
+    },
+    {
+      "id": "2",
+      "company_name": "XYZ",
+      "num_of_people": 1,
+      "num_of_page_visits": 2,
+      "time_on_site_in_secs": 42,
+      "last_visited_datetime": "2018-12-04 14:00:00+00:00"
+    },
+    {
+      "id": "3",
+      "company_name": "PQR",
+      "num_of_people": 1,
+      "num_of_page_visits": 1,
+      "time_on_site_in_secs": 151,
+      "last_visited_datetime": "2018-12-03 12:04:45+01:00"
+    }
+  ]
+}
